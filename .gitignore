@@ -1,0 +1,7 @@
+vendor
+tests/output
+tests/tmp
+tests/MVC/tmp
+tests/MVC/output
+tests/app/tmp
+tests/app/output

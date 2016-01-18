@@ -1,0 +1,9 @@
+{
+	"require":
+	{
+		"algolia/algoliasearch-client-php": "1.6.3"
+	},
+	"require-dev": {
+		"nette/tester": "^1.6"
+	}
+}
