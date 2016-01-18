@@ -1,5 +1,7 @@
 # Algolia Test App Store app #
 
+Demo: <http://algolia-test.naseobchody.cz/>
+
 ### Setup ###
 
 * Clone this repository
