@@ -38,7 +38,7 @@ class AlgoliaModelTestCase extends Tester\TestCase
 
 	public function testAddToIndexSuccess()
 	{
-		$addResult = $this->algoliaModel->addToIndex('apps', '{
+		$addResult = $this->algoliaModel->addToIndex('apps_test', '{
 			"name": "Testing app",
 			"image": "image-url",
 			"link": "app-link",
@@ -48,7 +48,7 @@ class AlgoliaModelTestCase extends Tester\TestCase
 
 		Assert::true(isset($addResult['objectID']));
 
-		$deleteResult = $this->algoliaModel->deleteFromIndex('apps', $addResult['objectID']);
+		$deleteResult = $this->algoliaModel->deleteFromIndex('apps_test', $addResult['objectID']);
 
 		Assert::true(isset($deleteResult['objectID']));
 		Assert::equal($addResult['objectID'], $deleteResult['objectID']);
