@@ -3,7 +3,7 @@ php:
     - 5.6
 
 script:
-    - vendor/bin/tester tests -s -p php -c tests/test_php.ini
+    - vendor/bin/tester tests -s -p php
 
 after_failure:
     # Print *.actual content
