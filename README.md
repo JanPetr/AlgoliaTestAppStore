@@ -1,4 +1,4 @@
-# Algolia Test App Store app #
+# Algolia Test App Store app [![Build Status](https://travis-ci.org/JanPetr/AlgoliaTestAppStore.svg?branch=master)](https://travis-ci.org/JanPetr/AlgoliaTestAppStore)
 
 Demo: <http://algolia-test.naseobchody.cz/>
 
