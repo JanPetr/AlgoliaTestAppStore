@@ -3,8 +3,6 @@
 use Tester\Assert;
 
 require __DIR__.'/../bootstrap.php';
-
-require __DIR__.'/../../app/config.inc.php';
 require __DIR__.'/../../app/Controllers/HomepageController.php';
 
 class HomepageControllerTestCase extends Tester\TestCase

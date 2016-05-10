@@ -3,8 +3,6 @@
 use Tester\Assert;
 
 require __DIR__.'/../bootstrap.php';
-
-require_once __DIR__.'/../../app/config.inc.php';
 require_once __DIR__.'/../../app/Models/AlgoliaModel.php';
 
 class AlgoliaModelTestCase extends Tester\TestCase

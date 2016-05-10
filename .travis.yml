@@ -1,19 +1,26 @@
 language: php
+
 php:
-    - 5.6
+  - 5.6
+  - 7.0
 
-script:
-    - vendor/bin/tester tests -s -p php
-
-after_failure:
-    # Print *.actual content
-    - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
-
-before_script:
-    - travis_retry composer install --no-interaction --prefer-dist
-  
 sudo: false
 
 cache:
-    directories:
-        - $HOME/.composer/cache
+  directories:
+    - $HOME/.composer/cache
+branches:
+  only:
+    - master
+    - travis
+
+install:
+  - composer install
+
+script:
+  - vendor/bin/tester tests -s
+
+env:
+  global:
+    - secure: Og7jxDdvuuga9Twsol1KOdLlg7njTmkmE7AVgAN82AhwibZWR4G2KcIR8E3HToGXXGL7cJANHEXPjmTIc8kqE9Zkn1epPfgyDjuU2NYgUM4UYbhm4NG/B/yBM6x4iVZ9t1/QBbogLRdnTyb+GNvoOrxxQo/hksZXTKCvX0fB/s8yRa7TN6vTfLBJnhqav7aYx4IFrvtsWvDMdIf4S7tTKBx03iNkd1XVfVBCekJW0N1eXo3Yhgoi9RC7voUIdGdht4A6O9I2v+j4xlt4QP2xKiM0l/rRVV8uc+ULKzltkuZ0c/3yrjV8eu68UzVAMHQuHDRdJDRfGiWhzYXkRm1M24wzjJerWpoRaZUR6lApA8uBq24f2U5IeUOXgsOPughCtzfDp2K/Foy3FlreyvSbWcO+Q6fIkrzWnErMCWMFjwlPAwsgkyWb/eDIo8hLVFmib8blJvEfc/8QUXmC9Pr95WLKPmYtvl9Ukg8x0kR3TJk3AFYvrjJ9kKbcw8eR5VXCGTZe+OHdAluqnUMi8X1jvOppBIPvGyDWMCl4S1plWia6rqqvly7l6U5FM9JhUnU36sFeup8hI9HUMFQU6W6B+bszPmGYM9J2QfstEBzkBwiHuTY4dJ3zcvtkB5dpfxwaXUGgzYHXsUP8cUYyf1oipjOiiy2KRwOjPMinkojV3eg=
+    - secure: MSelN7UY7jKh0zQ+tWoGCqnsmQuwlAdVpNmAlqpw0SQR9xHfjCf/L0+eWhAAvWIWS5ck/J61wX7w9aWUIGNRrta42Iv6EuOQ1ISACeohiBALRA8mxHy0ofLibpqkISaH2Urs+cWRqhAvJwlUPUdm4+pZi1fYNQ79r4ke5Wy7LyTBJi1pxikzChVGPo5jBi5bhrBJdW8WuszjeYFssH/TeFzcz2kMvsFaxeX6u1qkr6WTDYr/CcyTq9ksRrximW0+sDM99IgERmlYix+3nIa9cTh/FqmLW7h+FdxE2lVq6k5AYHaCOS4zod5ObawfmnJ9OyTEmij7YYTTQ9J1pXmoQooSuu7Xx3oZIytN2cgInfakXGJRBZPXGbgz4y4wrMX1fJ6WdtEFhd4eSyIMuatZ6dHCG+HeM9wbr/aUKJf3+3xxosWdy/hQu97uoET8LsnLM6tJ0MTPV0Wx3Iz4NogwLa4VlulfLJnBjTC9DlO5TKCpJJmnhVGfWfen1yPuAAXfYH6auDDojMlu6WBI3f7SurGO2knLS4s87o2dhGxk/2tNhI8mHghTnVFRcU2yDsWOIQ8KzOZrlkTmcav+MSXk32pO5w9QeERH55g3SgLQzPH4evMd0Hs+vhjx5wt0YVbX3/i7KPH/Yvd+4hlkTv1cYYB21Ii3Mho2fx79k1s7Uo8=
